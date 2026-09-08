@@ -14,5 +14,14 @@ def ver_post(id):
 def productos (categoria, producto):
     return f"Categoria: {categoria}, Producto: {producto}"
 
+#2 rutas 
+@app.route("/post/<int:post_id>")
+def post_por_id(post_id):
+    return f"Post ID: {post_id} => Tipo: {type(post_id).__name__}"
+
+@app.route("/archivo/<path:ruta_archivo>")
+def descargar_archivo(ruta_archivo):
+    return f"Descargando: {ruta_archivo}"
+
 if __name__ == '__main__':
     app.run(debug=True)
